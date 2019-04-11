@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+# Documentation du Projet Elec ITII-P17
 
-You can use the [editor on GitHub](https://github.com/itii-p17-projet-elec/documentation/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+**__Nota :__** Ce dépôt génère un site web accessible à l'adresse [https://itii-p17-projet-elec.github.io/documentation/](https://itii-p17-projet-elec.github.io/documentation/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Ce dépôt contient la documentation du projet d'électronique de deuxième année de la formation ITII-EII-P17.
 
-### Markdown
+L'objectif de ce projet est de réaliser un système gérant l’exploitation d'accumulateurs en milieu isolé.
+Le système a comme principaux objectifs de :
++ Charger une batterie d’accumulateurs à partir d’un panneau solaire en pilotant en azimut la position de ce dernier pour en optimiser le rendement ;
++ Superviser l’exploitation de la batterie (protection en cas de décharge excessive ou de consommation trop importante de la charge qui lui est reliée) ;
++ Transmettre les informations résultant de la supervision (charge, consommation, …) par un réseau sans fils et en permettre l’affichage sur PC/tablette/téléphone.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![architecture generale système](architecture/schema architecture generale-v1.0.svg)
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/itii-p17-projet-elec/documentation/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
