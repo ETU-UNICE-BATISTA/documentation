@@ -49,13 +49,13 @@ Excusés :
 | Gestion de la charge : Orientation du panneau solaire en site : Réglage | Un système comportant trois leds (trop bas, OK, trop haut) permettra d'assurer le bon réglage de l'axe vertical.|
 | Interface du chargeur : Affichage des mesures | Le chargeur doit afficher l'ensemble des mesures qu'il collecte. |
 | Mesures collectées : Courant de la batterie | Le chargeur doit mesurer le courant de charge/décharge de la batterie. |
-| Mesures collectées : Courant de la charge | |
-| Mesures collectées : Pourcentage de charge de la batterie | |
-| Mesures collectées : Température ambiante | |
-| Mesures collectées : Température de la batterie | |
-| Mesures collectées : Tension de la batterie | |
-| Transmission des mesures : Intervalle d'émission | |
-| Transmission des mesures : Paramètres | |
+| Mesures collectées : Courant de la charge | Le chargeur doit mesurer le courant consommé par la charge. |
+| Mesures collectées : Pourcentage de charge de la batterie | Le chargeur doit mesurer le pourcentage de charge de la batterie. |
+| Mesures collectées : Température ambiante | Le chargeur doit mesurer la température ambiante. |
+| Mesures collectées : Température de la batterie | Le chargeur doit mesurer la température de la batterie. |
+| Mesures collectées : Tension de la batterie | Le chargeur doit mesurer la tension de la batterie. |
+| Transmission des mesures : Intervalle d'émission | Les mesures devront être transmises à intervalle régulier ou lors d'une variation importante de l'une des grandeurs. |
+| Transmission des mesures : Paramètres | Les paramètres de transmission (puissance, ....) devront être adaptés à la configuration géographique du lieu pour assurer une consommation minimale. |
 
 
 #### Définition du périmètre
@@ -77,13 +77,13 @@ Le système microcontrôleur ne prend **PAS** en charge :
 
 ### Sujet 2 : Fixer les interfaces du système
 
-__Objectif :__ Figer les différentes interfaces matérielles nécessaires pour échanger des informations avec les autres systèmes.
+__Objectif :__ Figer les différentes interfaces matérielles nécessaires pour échanger des informations avec les autres systèmes pour permettre le démarrage des études de qualification des composants.
 
 
 #### Interface Système Radiocomm :
 
-+ **Alimentation :** Signal de pilotage permettant de couper l'alimentation du système "radiocommunication" lors de la mise en veille du système.
-+ **Données :** Bus I2C permettant l'échange de données entre le système radiocomm et le système microcontrôleur. Le système microcontrôleur est l maître.
++ **Alimentation :** Signal de pilotage TTL permettant de couper l'alimentation du système "radiocommunication" lors de la mise en veille du système.
++ **Données :** Bus I2C permettant l'échange de données entre le système radiocomm et le système microcontrôleur. Le système microcontrôleur est le maître.
 + **Interruption :** Signal fourni par le système radiocommunication en cas de réception d'un message.
 
 
@@ -91,7 +91,7 @@ __Objectif :__ Figer les différentes interfaces matérielles nécessaires pour 
 
 Interface avec l'écran et les boutons
 + **Données :** Bus I2C pour piloter l'écran ;
-+ **Entrées TTL :** GPIO en provenance des boutons.
++ **Entrées TTL :** 3 à 5 GPIO en provenance des boutons.
 
 
 #### Interface Système "panneau solaire"
@@ -127,6 +127,20 @@ Interfaces à prévoir :
   + 5 x Entrées ADC sur le microcontrôleur.
 
 
+#### Synthèse
+
+Les directions sont données ici par rapport au microcontrôleur.
+
+| - | Digital<BR>inputs (interrupts) | Digital<BR>outputs | Analog<BR>inputs | Bus I2C<BR>(**M**aster ou **S**lave) |
+|:--				|:--:	|:--:	|:--:|:--:|
+| Système Batterie		| -	| -	| 5	| 1xS |
+| Système Panneau Solaire	| -	| 2	| 1	| 1xS |
+| Système Radiocommunication	| 1	| 1	| -	| 1xS |
+| Interface opérateur		| 3-5	| -	| -	| 1xS |
+| **TOTAL :**			| **4-6** | **3** | **6** | **1 x M** |
+
+
+
 ### Sujet 3 : Définir un layout normalisé pour le PCB
 
 Ajourné faute d'informations sur les autres sous-systèmes.
@@ -155,6 +169,7 @@ Ajourné faute d'informations sur les autres sous-systèmes.
 
 | Identifiant Github | Désignation | Détails |
 | ---|--- |--- |
-| | Validation interfaces | Valider les interfaces avec les autres groupes. |
+| [documentation#1](https://github.com/itii-p17-projet-elec/documentation/issues/1) | Validation interfaces | Valider les interfaces avec les autres groupes. |
 | | Bilan E/S | Dresser le bilan des entrées et sorties du système microcontrôleur. |
 | | Identifier composants | Veille techno sur les µC et écrans utilisables (en particulier trouver des écrans I2C avec alim en 3,3V). |
+
