@@ -12,7 +12,7 @@ TODO
 
 Le système "microcntrôleur" s'interface avec le système "collecte des mesures" au travers du système "radiocommunication".
 
-Les différents documents ci-après décrivent les différentes interfaces entre le système "microcontrôleur" et le système "radiocommunication".
+Les différents documents ci-après décrivent les interfaces entre le système "microcontrôleur" et le système "radiocommunication".
 
 
 
@@ -20,25 +20,23 @@ Les différents documents ci-après décrivent les différentes interfaces entre
 
 TODO
 
-Ce document est constitué de plusieurs sous-parties :
-+ **Introduction :** Généralités à propos du système et de ce document ;
-+ **Spécifications matérielles :** Description de l'interface matérielle entre les différents systèmes concernés ;
-+ **Spécifications fonctionnelles:** Description de la logique utilisée par l'interface.
 
 
 ## Identification des différents canaux de communication
 
-Les différentes interfaces entre les deux systèmes sont identifiées dans le diagramme ci-dessous :
+Les différents types de "canaux" entre les deux systèmes sont schématisés dans le diagramme ci-dessous :
 
 ![Schema d'identification des interfaces](rsrc/interfaces-microcontroleur_radiocomm-v1.0.png)
 
+Les canaux de communication suivants ont été identifiés :
+
+| Identifiant | Nom | Documentation | Description |
+| --:|:-- | :--: | :-- |
+| | **Pilotage alimentation** | [doc interface](pilotage_alim.md) | Signal permettant d'activer l'interface RF qu'en cas de besoin de transmission. |
+| | **Données** | | Interface permettant d'échanger des données avec l'interface RF. |
+| | **Interruption** | | Signal émis par le système Radiocomm pour prévenir le système microcontrôleur d'un évènement (reception de données par exemple). |
 
 
-
-
-# Identification des différents bus
-
-Les deux systèmes 
 
 # Spécifications matérielles
 
