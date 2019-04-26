@@ -12,3 +12,8 @@ Le système a comme principaux objectifs de :
 
 ![architecture generale système](architecture/schema architecture generale-v1.0.svg)
 
+
+## Documents de description des interfaces
+
+La liste des interfaces et les documents les décrivant sont accessibles
+[à cette adresse](interfaces/).
