@@ -4,7 +4,7 @@
 
 Le schéma ci-dessous présente les différentes interfaces entre les systèmes :
 
-![Schema d'identification des interfaces](rsrc/diagramme-interfaces-v2.0.png)
+![Schema d'identification des interfaces](rsrc/diagramme-interfaces-v2.1.png)
 
 
 ## Liste des documents d'interface
